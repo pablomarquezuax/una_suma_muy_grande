@@ -1,25 +1,23 @@
-import math
-import os
-import random
-import re
-import sys
+# Función para sumar los elementos del array
+def sumar_array(array):
+    suma = sum(array)
+    return suma
 
-# Complete the aVeryBigSum function below.
-def aVeryBigSum(ar):
-    sum = 0
-    for i in range(len(ar)):
-        sum+=ar[i]
-    return sum
+# Función principal
+def aVeryBigSum():
+    # Input del usuario: introducir los números separados por espacios
+    input_numeros = input("Introduce un array de números separados por espacios: ")
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    # Convertir la entrada a una lista de números
+    array_numeros = [float(num) for num in input_numeros.split()]
 
-    ar_count = int(input())
+    # Mostrar el array
+    print("Array de números:", array_numeros)
 
-    ar = list(map(int, input().rstrip().split()))
+    # Calcular y mostrar la suma de los números
+    suma_total = sumar_array(array_numeros)
+    print("Suma total (long):", suma_total)
 
-    result = aVeryBigSum(ar)
-
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
+# Ejecutar el programa principal
+if __name__ == "__main__":
+   aVeryBigSum()
